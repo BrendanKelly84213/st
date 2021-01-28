@@ -113,23 +113,18 @@ static const char *colorname[] = {
 	"#657b83",  /* 11: bryellow */
 	"#839496",  /* 12: brblue   */
 	"#6c71c4",  /* 13: brmagenta*/
-	"#93a1a1",  /* 14: brcyan   */
+	"#222222",  /* 14: dark gray */
 	"#fdf6e3",  /* 15: brwhite  */
-	"#121212",  /* 16: dark theme gray, looks black to me */
-	"#bbbbbb",  /* 17: looks black */
-	"#222222",  /* 18: I guess blue */
-	"#eeeeee",  /* 19: weird blue*/
-	"black"
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 18;
-static unsigned int defaultcs = 14;
-static unsigned int defaultrcs = 15;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 14;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 14;
 
 /*
  * Default shape of cursor
@@ -173,8 +168,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
-	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
+	{ 0,                    Button4, kscrollup,      {.i = 1} },
+	{ 0,                    Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
